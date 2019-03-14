@@ -29,5 +29,6 @@ Test folder includes some test files with output in comments.
 Test is done via by providing an input file that contains bc code.
 
 ```
-   mvn
+   mvn clean install
+   mvn exec:java -Dexec.args="testfile.bc"
 ```
