@@ -1,0 +1,58 @@
+scale = 0
+n = 10
+fact = 1
+
+while(n != 0){
+    fact *= n
+    --n;
+}
+
+print fact
+
+n = 0
+sum = 0
+
+while(n <= 10){
+    sum += (n++);
+}
+
+print sum
+
+n = 0
+
+/* while loop with continue */
+while(n < 10){
+
+    if(n == 5 ){
+        print n++
+        continue
+    }
+
+    n = n + 1
+}
+
+n = 0
+
+/* while loop with break */
+while(1){
+    if(n > 10){
+        print n
+        break
+    }
+    n = n + 1
+}
+
+# 9
+# 8
+# 7
+# 6
+# 5
+# 4
+# 3
+# 2
+# 1
+# 0
+# 3628800
+# 55
+# 5
+# 11

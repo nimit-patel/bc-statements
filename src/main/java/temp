@@ -1,0 +1,69 @@
++ A keyword auto is used for scoping in function
++ Function can have function call inside of it
++ Function can have empty parameters
++ No nested function
++ The first form, "return", returns the value 0 to the calling expression.
+  The second form, "return ( expression )", computes the value of the expression
+  and returns that value to the calling expression. There is an implied "return (0)"
+  at the end of every function.
+  This allows a function to terminate and return 0 without an explicit return statement.
+
+
+grammar bc;
+import lexerRules;
+
+
+bc          : equation+
+            | EOF
+            ;
+
+equation    : calc ( TERMINATOR calc)* TERMINATOR? NEWLINE?
+            | PRINT calc COMMA? NEWLINE?
+            ;
+
+calc        : expression
+            ;
+
+expression returns [BigDecimal result]
+            : op = ( INC | DEC) variable
+            | variable op = ( INC | DEC)
+            | MINUS variable
+            | left = expression POW right = expression
+
+            | left = expression op = (MUL | DIV | MOD) right = expression
+            | left = expression op = (PLUS | MINUS) right = expression
+            | NOT expression
+            | left = expression AND right = expression
+            | left = expression OR right = expression
+            | READ LPAREN expression RPAREN
+            | SQRT LPAREN expression RPAREN
+            | SIN LPAREN expression RPAREN
+            | COS LPAREN expression RPAREN
+            | LOG LPAREN expression RPAREN
+            | EXP LPAREN expression RPAREN
+            | variable op = (MUL | DIV | PLUS | MINUS | MOD | POW) EQUAL expression
+
+            | variable EQUAL expression
+            | variable EQUAL READ LPAREN RPAREN NEWLINE expression
+            | SCALE EQUAL expression
+            | variable
+            | number
+            | MINUS number
+            | last
+            ;
+
+variable returns [BigDecimal value]
+            : VARIABLE
+            ;
+
+number returns [BigDecimal value]
+            : NUMBER
+            ;
+
+read  returns [BigDecimal value]
+            : READ number
+            ;
+
+last  returns [BigDecimal value]
+            : LAST
+            ;
