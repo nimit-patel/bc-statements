@@ -1,5 +1,38 @@
 scale = 0
 
+/* TEST 1: pure function */
+define square(x){
+   return x * x
+}
+
+square(2)           # 4
+square(-2)          # 4
+square(25)          # 625
+square(square(7))   # 2401
+
+/* local scope for x */
+x           # 0
+
+/* TEST 2: function with global and local variable
+           sum in global scope and i, n in local scope */
+sum = 0
+
+define sumupto(n){
+    for(i = 1; i <= n; ++i){
+        sum += i
+    }
+}
+
+sumupto(4)            # 0
+
+/* variable value after function call,
+   default value is zero if var not in scope */
+sum                   # 10
+i                     # 0
+n                     # 0
+
+
+/* TEST 3: recursive fibonacci function */
 define fib(n){
     if(n == 0 || n == 1){
         return 1;
@@ -14,6 +47,7 @@ fib(2)  # 2
 fib(3)  # 3
 fib(4)  # 5
 
+/* TEST 4: recursive factorial function */
 define fact(n){
 
     if(n == 0){
@@ -23,10 +57,40 @@ define fact(n){
     return n * fact(n - 1);
 }
 
-fact(0) # 0
+fact(0) # 1
 fact(1) # 1
 fact(2) # 2
 fact(3) # 6
 fact(4) # 24
 
-n       # 0
+
+/* TEST 5: nested function call */
+
+define mulupto(n){
+
+    result = 1;
+
+    for(k = 2; k <= n; ++k){
+        result *= k;
+    }
+
+    return result
+}
+
+define foo(n){
+
+    for(j = 1; j <= n; ++j){
+        mulupto(j)
+    }
+
+    return
+}
+
+
+foo(4)
+
+# 1
+# 2
+# 6
+# 24
+# 0

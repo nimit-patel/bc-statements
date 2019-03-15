@@ -8,15 +8,12 @@ if(x < y){
     print y;
 }
 
-# 10
 
 if(x + 10 < y){
     print x;
 }else{
     print y;
 }
-
-# 20
 
 x = 3
 y = 4
@@ -27,7 +24,6 @@ if(x^2 + y^2 == 25){
     print 0
 }
 
-# 25
 
 if(x^2 + y^2 != 25){
     print x^2 + y^2
@@ -36,5 +32,17 @@ if(x^2 + y^2 != 25){
     y^2
 }
 
+num = 100
+
+if(num % 2 == 0){
+    print 1
+}else{
+    print 0
+}
+
+# 10
+# 20
+# 25
 # 9
 # 16
+# 1
