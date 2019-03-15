@@ -16,17 +16,16 @@ Basic Calculator (bc) using ANTLR4.
     For loop 
     User defined functions
 
-    Special keyword return, break,and  continue
+    Special keyword return, break, and continue
 
     Note: print expressions command prints new line after evaluating each expression for readability.
 
 ## Testing
 
-Test folder includes some test files with output in comments.
+This java project uses Maven. Please have maven installed to perform testing.
+For testing, the main program takes test file path as a command line argument.
 
-###  Running the tests
-
-Test is done via by providing an input file that contains bc code.
+###  To run a test
 
 ```
    mvn clean install
