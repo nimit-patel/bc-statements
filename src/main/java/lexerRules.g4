@@ -134,7 +134,7 @@ TERMINATOR  : ';'
             ;
 
 /* Matches variables */
-VARIABLE    : [a-z]+[0-9]*;
+VARIABLE    : [a-z]+('_')*[0-9]*;
 
 /*  Matches whole or real number */
 NUMBER      : [0-9]+('.'[0-9]+)?;

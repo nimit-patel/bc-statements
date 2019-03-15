@@ -232,7 +232,8 @@ public class Visitor extends bcBaseVisitor<BigDecimal>{
         }else{
             value = value.subtract(ONE);
         }
-        globalScope.put(ctx.VARIABLE().getText(), value);
+
+        putValue(ctx.VARIABLE().getText(), value);
         return value;
     }
 
@@ -242,13 +243,14 @@ public class Visitor extends bcBaseVisitor<BigDecimal>{
         int opType = ctx.op.getType();
 
         if(opType == bcParser.INC){
-            globalScope.put(ctx.VARIABLE().getText(), value.add(ONE));
+            putValue(ctx.VARIABLE().getText(), value.add(ONE));
         }else{
-            globalScope.put(ctx.VARIABLE().getText(), value.subtract(ONE));
+            putValue(ctx.VARIABLE().getText(), value.subtract(ONE));
         }
 
         return value;
     }
+
 
 
     @Override
