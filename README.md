@@ -2,7 +2,7 @@
 Basic Calculator (bc) using ANTLR4. 
 
 ##  Currently working Functionalities
-  
+```
     Comments: Single line (# ... ) and multi-line commens /* ... */
     Basic expressions with variables (++, --, -, =, <op>=)
     Boolean Expressions (&&, ||, !)
@@ -18,7 +18,16 @@ Basic Calculator (bc) using ANTLR4.
 
     Special keyword return, break, and continue
 
-    Note: print expressions command prints new line after evaluating each expression for readability.
+    Note: print expressions command prints new line after evaluating each expression for readability. Default value of variable is 0.0
+ ```
+ 
+### Scoping Rules
+
+Global scope is used expect for functions.
+
+#### Functions
+   The arguments of a function and any variable in the function body that does not
+   exist in the global scope are considered to be in the local scope.
 
 ## Testing
 
