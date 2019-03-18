@@ -33,7 +33,7 @@ loop_stat   : BREAK
 func_call   : VARIABLE OPAREN (expression COMMA)* expression CPAREN TERMINATOR?
             ;
 
-print_stat  : PRINT expression COMMA? NEWLINE?
+print_stat  : PRINT expression COMMA?
             ;
 
 if_else     : IF expression block (ELSE block)?
