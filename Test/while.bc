@@ -9,7 +9,7 @@ while(n != 0){
 
 print fact
 
-i = 1
+i = 0
 
 /* Nested while loops */
 while(i <= 1){
@@ -63,6 +63,7 @@ while(1){
 # 1
 # 0
 # 3628800
+# 55
 # 55
 # 5
 # 50
