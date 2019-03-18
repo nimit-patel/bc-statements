@@ -33,6 +33,7 @@ Global scope is used expect for functions.
 
 This java project uses Maven. Please have maven installed to perform testing.
 For testing, the main program takes test file path as a command line argument.
+The test folder contains several test files testing individual funtionality.
 
 ###  To run a test
 
